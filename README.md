@@ -79,4 +79,4 @@ Access to the API is determined by your organization's plan. Some plans will rec
 
 ## Versions
 
-- [/v1.0/endpoints](v1-0/endpoints) * Latest
+- [/v1.0/endpoints](v1-0/endpoints.md) * Latest
