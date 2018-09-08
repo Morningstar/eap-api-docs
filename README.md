@@ -1,4 +1,4 @@
-[![](https://theomx.com/assets/new/omx_logo-e309ca445f44378e718aa40cd5c054c14d18337b4706f912ec3ec47935432af1.png | width=200)](https://theomx.com/)
+<center><a href='https://theomx.com'><img src="https://theomx.com/assets/new/omx_logo-e309ca445f44378e718aa40cd5c054c14d18337b4706f912ec3ec47935432af1.png" width="200" ></a></center>
 
 ## How It Works
 
@@ -16,8 +16,6 @@ https://theomx.com/api/1.0/authenticate
 
 The OMX API is queried with a key:
 
-### SENT BY CLIENT SYSTEM
-
 ```
 {
   api_key: ABC123
@@ -26,7 +24,6 @@ The OMX API is queried with a key:
 
 The returned data provides the input parameters which were queried, plus a resultset (in this case a session token), plus any warnings and/or errors:
 
-### RETURNED BY OMX
 
 ```
 {
@@ -54,7 +51,6 @@ Tokens should expire within one hour of issue.
 
 The token provided in the authentication phase is used as an input parameter to authenticate phase two: the actual data query. The result set will look something like this:
 
-### RETURNED BY OMX
 
 ```
 {
@@ -83,4 +79,4 @@ Access to the API is determined by your organization's plan. Some plans will rec
 
 ## Versions
 
-- [/v1.0/endpoints] * Latest
+- [/v1.0/endpoints](v1.0/endpoints) * Latest
