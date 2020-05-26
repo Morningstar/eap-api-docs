@@ -1,5 +1,8 @@
 # API v1.0 Endpoints
 
+For details on endpoints used on Sustainalytics ratings integration follow  the link below:
+- [/v1.0/ratings](v1-0/ratings.md)
+
 ## Authenticate
 
 ~~~
