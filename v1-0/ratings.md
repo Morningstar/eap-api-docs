@@ -103,7 +103,12 @@ https://theomx.com/api/1.0/organizations/match
   <tr>
     <td>street_number</td>
     <td>123</td>
-    <td>Mandatory</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>complement</td>
+    <td>'unit 123'</td>
+    <td></td>
   </tr>
   <tr>
     <td>telephone</td>
