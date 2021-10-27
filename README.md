@@ -79,7 +79,8 @@ Access to the API is determined by your organization's plan. Some plans will rec
 
 # Versions
 
-- [/v1.0/endpoints](v1-0/endpoints.md) * Latest
+- [/v2.0/endpoints](v2-0/endpoints.yml) * Latest
+- [/v1.0/endpoints](v1-0/endpoints.md)
 
 # Error Messages
 

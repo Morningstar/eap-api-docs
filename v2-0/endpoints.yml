@@ -1,0 +1,450 @@
+openapi: 3.0.0
+info:
+  description: "The OMX API accepts queries using a two-phase approach: the authentication handshake and then the actual query itself. In either scenario, the system is queried with a version number, an endpoint (which defines the type of information requested) and a payload containing input parameters (sent by POST), and then returns a resultset."
+  version: "2.0"
+  title: "OMX API"
+  contact:
+    email: "contact@theomx.com"
+tags:
+- name: "authenticate"
+  description: "Authentication handshake"
+- name: organizations
+  description: "Organizations API"
+paths:
+  /authenticate:
+    post:
+      tags:
+      - "authenticate"
+      summary: "Creates an access token for an API key"
+      operationId: "authenticate"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - api_key
+              properties:
+                api_key:
+                  type: string
+                  description: "The api key"
+                  example: 'a4603ebbe8f819cf0f12386bc7ee359c'
+      responses:
+        200:
+          description: "Ok"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuthenticateResponse"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/AuthenticateResponse"
+        400:
+          description: 'Bad request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthenticateError'
+            application/xml:
+              schema:
+                type: object
+                required:
+                  - response
+                properties:
+                  response:
+                    $ref: '#/components/schemas/AuthenticateError'
+                xml:
+                  name: response
+  /organizations:
+    post:
+      tags:
+        - organizations
+      summary: Lists organizations within the OMX Platform for given filters
+      operationId: getOrgs
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrganizationsRequestBody'
+      responses:
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrganizationsError'
+            application/xml:
+              schema:
+                type: object
+                required:
+                  - response
+                properties:
+                  response:
+                    $ref: '#/components/schemas/OrganizationsError'
+                xml:
+                  name: response
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrganizationsResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/OrganizationsResponse'
+
+components:
+  schemas:
+    ApiKey:
+      type: "object"
+      required:
+      - "expires_on"
+      - "token"
+      properties:
+        token:
+          type: "string"
+          example: a4603ebbe8f819cf0f12386bc7ee359c
+        expires_on:
+          type: string
+          description: Access token expiry timestamp
+          format: datetime
+          example: "2021-01-01T00:00:00.000-04:00"
+      xml:
+        name: "result"
+    AuthenticateResponse:
+      type: object
+      required:
+        - datetime
+        - format
+        - result
+      properties:
+        datetime:
+          type: string
+          format: datetime
+          example: "2021-01-01T00:00:00.000-04:00"
+        format:
+          type: "string"
+          description: "Response format"
+          enum:
+          - "json"
+          - "xml"
+        result:
+          $ref: '#/components/schemas/ApiKey'
+      xml:
+        name: response
+    AuthenticateError:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: string
+          description: The error code
+          enum:
+            - "0001"
+            - "0009"
+        message:
+          type: string
+          description: The error description
+          enum:
+            - "Incorrect or Unauthorized key"
+            - "api_key field required"
+      xml:
+        name: errors
+    OrganizationsRequestBody:
+      type: object
+      required:
+        - token
+      properties:
+        token:
+          type: string
+          description: The API access token returned by the authentication handshake
+          example: a4603ebbe8f819cf0f12386bc7ee359c
+        page:
+          type: string
+          format: number
+          description: page number. Must be greater than 0. Defaults to 1 if not present.
+          example: 1
+        format:
+          type: string
+          description: The response content type. Defaults to json if not present.
+          enum:
+            - json
+            - xml
+        is_pinned:
+          type: boolean
+          description: Returns pinned companies if true. Otherwise, unpinned companies.
+        tags:
+          type: string
+          description: A comma-separated list of tags. Returns companies that are tagged with the given tags.
+          example: EGB Supplier,Service Provider
+        esg_risk_rating_category:
+          type: string
+          description: A comma-separated list of rating categories. Returns companies that match given list.
+          enum:
+            - negligible
+            - low
+            - medium
+            - high
+        nace_codes:
+          type: string
+          description: A comma-separated list of NACE codes. Returns companies that match given list.
+          example: 'A01.11'
+        unspsc_codes:
+          type: string
+          description: A comma-separated list of UNSPSC codes. Returns companies that match given list.
+          example: '84111700'
+        naics_codes:
+          type: string
+          description: A comma-separated list of NAICS codes. Returns companies that match given list.
+          example: '523110'
+        is_claimed:
+          type: boolean
+          description: Returns claimed companies if true. Otherwise, unclaimed companies.
+        is_verified:
+          type: boolean
+          description: Returns verified companies if true. Otherwise, unverified companies.
+        aboriginal_owned:
+          type: boolean
+          description: Returns aboriginal owned companies if true. Otherwise, not aboriginal owned companies.
+        veteran_owned:
+          type: boolean
+          description: Returns veteran owned companies if true. Otherwise, not veteran owned companies.
+        women_owned:
+          type: boolean
+          description: Returns women owned companies if true. Otherwise, not women owned companies.
+        certifications:
+          type: string
+          description: A comma-separated list of certifications. Returns companies that match given list.
+          example: 'ISO 9001,ISO 9002'
+        organization_type:
+          type: string
+          description: A comma-separated list of organization types. Returns companies that match given list.
+          example: Corporation,Association
+        countries_exported_to:
+          type: string
+          description: A comma-separated list of countries. Returns companies that match given list.
+          example: 'CA,US'
+        keywords:
+          type: string
+          description: A comma-separated list of keywords to search by. Returns companies that match given list.
+          example: 'cloud,infrastructure'
+    Organization:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: string
+          description: The organization id
+          example: 1
+        description:
+          type: string
+          description: The organzation description
+          example: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+        organization_name:
+          type: string
+          example: OMX
+        country:
+          type: string
+          example: CA
+        website:
+          type: string
+          example: https://theomx.com/
+        email:
+          type: string
+          example: info@theomx.com
+        aboriginal_owned:
+          type: boolean
+        veteran_owned:
+          type: boolean
+        women_owned:
+          type: boolean
+        languages:
+          type: array
+          items:
+            type: string
+          example:
+            - eng
+            - fre
+        key_industrial_capabilities:
+          type: string
+          example: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        year_established:
+          type: integer
+          example: 2020
+        telephone:
+          type: string
+          example: 1234567890
+        ext:
+          type: string
+          description: Phone extension
+          example: 4
+        is_claimed:
+          type: boolean
+        is_verified:
+          type: boolean
+        number_of_current_opportunities:
+          type: integer
+          example: 1
+        organization_types:
+          type: array
+          items:
+            type: string
+          example:
+            - Corporation
+            - Government
+        countries_exported_to:
+          type: array
+          items:
+            type: string
+          example:
+            - CA
+            - US
+        annual_sales:
+          type: integer
+          description: The annual sales value
+          example: 1000000
+        annual_exports:
+          type: integer
+          description: The annual exports value
+          example: 1000000
+        total_employees:
+          type: integer
+          description: The number of employees of this company
+          example: 32054
+        major_clients:
+          type: string
+          description: Major clients of this company
+          example: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        unspsc_codes:
+          type: array
+          items:
+            type: string
+          example:
+            - '84111700'
+        naics_codes:
+          type: array
+          items:
+            type: string
+          example:
+            - "523110"
+            - "522110"
+        nace_codes:
+          type: array
+          items:
+            type: string
+          example:
+            - "K64.1"
+            - "K64.11"
+        lei_codes:
+          type: array
+          description: A list of LEI codes associated to this company
+          items:
+            type: string
+          example:
+            - '959800NEP6XY8CHS8G76'
+            - '549300QE1RU34T50MR69'
+        duns:
+          type: string
+          example: 012345678
+        certifications:
+          type: array
+          items:
+            type: string
+          example:
+            - ISO 9001
+            - ISO 9002
+        alliances:
+          type: array
+          items:
+            type: string
+          example:
+            - Aerospace PEI
+            - Aerospace Alberta
+        product_and_services:
+          type: array
+          items:
+            type: string
+          example:
+            - Private Banking
+            - Investment Banking
+        is_pinned:
+          type: boolean
+        esg_risk_rating_score:
+          type: number
+          format: float
+          example: 0.8
+        esg_risk_rating_category:
+          type: string
+          enum:
+            - negligible
+            - low
+            - medium
+            - high
+        esg_risk_rating_class:
+          type: string
+          enum:
+            - '1'
+            - '2'
+            - '3'
+
+        esg_risk_exposure_score:
+          type: number
+          format: float
+          example: 0.8
+        esg_risk_exposure_category:
+          type: string
+          enum:
+            - negligible
+            - low
+            - medium
+            - high
+        esg_risk_management_score:
+          type: number
+          format: float
+          example: 0.8
+        esg_risk_management_category:
+          type: string
+          enum:
+            - negligible
+            - low
+            - medium
+            - high
+
+    OrganizationsError:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: string
+          description: The error code
+          enum:
+            - '0002'
+            - '0007'
+        message:
+          type: string
+          description: The error description
+          enum:
+            - 'Unauthorized token'
+            - "Expired API Key; please contact OMX team"
+      xml:
+        name: errors
+    OrganizationsResponse:
+      type: object
+      required:
+        - result
+      properties:
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/Organization'
+      xml:
+        name: response
+
+externalDocs:
+  description: "Find out more about the OMX API"
+  url: "https://github.com/omx/API-Docs"
