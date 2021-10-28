@@ -5,6 +5,8 @@ info:
   title: "OMX API"
   contact:
     email: "contact@theomx.com"
+servers:
+  - url: "https://theomx.com/api/2.0"
 tags:
 - name: "authenticate"
   description: "Authentication handshake"
@@ -72,7 +74,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/OrganizationsError'
+                $ref: '#/components/schemas/ApiError'
             application/xml:
               schema:
                 type: object
@@ -80,7 +82,7 @@ paths:
                   - response
                 properties:
                   response:
-                    $ref: '#/components/schemas/OrganizationsError'
+                    $ref: '#/components/schemas/ApiError'
                 xml:
                   name: response
         200:
@@ -92,7 +94,43 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/OrganizationsResponse'
-
+  /opportunities:
+    post:
+      tags:
+        - opportunities
+      summary: Lists opportunities within the OMX Platform for given filters
+      operationId: getOpportunities
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OpportunitiesRequestBody'
+      responses:
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+            application/xml:
+              schema:
+                type: object
+                required:
+                  - response
+                properties:
+                  response:
+                    $ref: '#/components/schemas/ApiError'
+                xml:
+                  name: response
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OpportunitiesResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/OpportunitiesResponse'
 components:
   schemas:
     ApiKey:
@@ -152,6 +190,148 @@ components:
             - "api_key field required"
       xml:
         name: errors
+    OpportunitiesRequestBody:
+      type: object
+      required:
+        - token
+      properties:
+        token:
+          type: string
+          description: The API access token returned by the authentication handshake
+          example: a4603ebbe8f819cf0f12386bc7ee359c
+    OpportunitiesResponse:
+      type: object
+      properties:
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/Opportunity'
+    Opportunity:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The opportunity id
+          example: HLiLNyuAvrLVNq4oawR4gOJfAY0q0t_Msqu2hEDDEfU
+        title:
+          type: string
+          description: The opportunity title
+          example: 'Lorem ipsum dolor sit amet'
+        description:
+          type: string
+          description: The opportunity description
+          example: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+        fulfillment_date:
+          type: string
+          format: datetime
+          description: When the opportunity was fulfilled
+          example: "2015-07-31"
+        delivery_country:
+          type: string
+          description: The country where the opportunity was delivered
+          example: CA
+        min_domestic_content:
+          type: number
+          format: float
+          example: 80.0
+        type:
+          type: string
+          description: The opportunity type
+          enum:
+            - Business
+            - Employment/Co-op
+            - Event
+            - Expression of Interest
+            - Notice of Intent
+            - Request for Information
+            - Request for Proposal
+            - Request for Quotation
+        must_be_aboriginal_owned:
+          type: boolean
+          nullable: true
+        must_be_women_owned:
+          type: boolean
+          nullable: true
+        must_be_veteran_owned:
+          type: boolean
+          nullable: true
+        organization_name:
+          type: string
+          description: The organization name
+          example: ACME corporation
+        posted_on:
+          type: string
+          format: datetime
+          description: When the opportunity was posted
+          example: "2021-06-25T03:25:26.355-04:00"
+        expires_on:
+          type: string
+          format: date
+          description: The opportunity expiry date
+          example: "2021-06-25"
+        maximum_company_size:
+          type: number
+          nullable: true
+          example: 250
+        unspsc_codes:
+          type: array
+          items:
+            type: string
+          xml:
+            wrapped: true
+          example:
+            - '84111700'
+        naics_codes:
+          type: array
+          items:
+            type: string
+          xml:
+            wrapped: true
+          example:
+            - "523110"
+            - "522110"
+        nace_codes:
+          type: array
+          items:
+            type: string
+          xml:
+            wrapped: true
+          example:
+            - "K64.1"
+            - "K64.11"
+        certifications:
+          type: array
+          items:
+            type: string
+          xml:
+            wrapped: true
+          example:
+            - ISO 9001
+            - ISO 9002
+        required_incoterms:
+          type: array
+          items:
+            type: string
+            example: CIF
+        items:
+          type: array
+          items:
+            type: string
+          example:
+            - "5000 of Test [1231]"
+            - "5000 of Item ABC"
+        other_requirements:
+          type: array
+          items:
+            type: string
+          example:
+            - "Requirement 1"
+            - "Requirement 2"
+        omx_url:
+          type: string
+          description: The URL to this opportunity on OMX Platform
+          example: "https://theomx.com/search_all/opportunities/HLiLNyuAvrLVNq4oawR4gOJfAY0q0t_Msqu2hEDDEfU"
+
     OrganizationsRequestBody:
       type: object
       required:
@@ -265,6 +445,8 @@ components:
           type: array
           items:
             type: string
+          xml:
+            wrapped: true
           example:
             - eng
             - fre
@@ -292,6 +474,8 @@ components:
           type: array
           items:
             type: string
+          xml:
+            wrapped: true
           example:
             - Corporation
             - Government
@@ -299,6 +483,8 @@ components:
           type: array
           items:
             type: string
+          xml:
+            wrapped: true
           example:
             - CA
             - US
@@ -322,12 +508,16 @@ components:
           type: array
           items:
             type: string
+          xml:
+            wrapped: true
           example:
             - '84111700'
         naics_codes:
           type: array
           items:
             type: string
+          xml:
+            wrapped: true
           example:
             - "523110"
             - "522110"
@@ -335,6 +525,8 @@ components:
           type: array
           items:
             type: string
+          xml:
+            wrapped: true
           example:
             - "K64.1"
             - "K64.11"
@@ -343,6 +535,8 @@ components:
           description: A list of LEI codes associated to this company
           items:
             type: string
+          xml:
+            wrapped: true
           example:
             - '959800NEP6XY8CHS8G76'
             - '549300QE1RU34T50MR69'
@@ -353,6 +547,8 @@ components:
           type: array
           items:
             type: string
+          xml:
+            wrapped: true
           example:
             - ISO 9001
             - ISO 9002
@@ -360,6 +556,8 @@ components:
           type: array
           items:
             type: string
+          xml:
+            wrapped: true
           example:
             - Aerospace PEI
             - Aerospace Alberta
@@ -367,6 +565,8 @@ components:
           type: array
           items:
             type: string
+          xml:
+            wrapped: true
           example:
             - Private Banking
             - Investment Banking
@@ -412,8 +612,7 @@ components:
             - low
             - medium
             - high
-
-    OrganizationsError:
+    ApiError:
       type: object
       required:
         - code
