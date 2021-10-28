@@ -199,6 +199,50 @@ components:
           type: string
           description: The API access token returned by the authentication handshake
           example: a4603ebbe8f819cf0f12386bc7ee359c
+        page:
+          type: string
+          description: The response page. Defaults to 1 if not present.
+          exampe: 1
+        format:
+          type: string
+          description: The response format. Defaults to json if not present.
+          enum:
+            - json
+            - xml
+        keywords:
+          type: string
+          description: A comma-separated list of keywords to search by. Returns records that match the given keywords.
+          example: 'cloud,hosting'
+        posted_after:
+          type: string
+          format: datetime
+          description: Return only opportunities published after the gien date. Timezeone is GMT.
+        country:
+          type: string
+          description: Return only opportunities that match the country code.
+          example: CA
+        unspsc_codes:
+          type: string
+          description: A comma-separated list of UNSPSC codes to search by. Returns records that match the given codes.
+        allow_unspsc_child:
+          type: boolean
+          description: Include child UNSPSC codes. Must be used with the unspsc_codes filter.
+        naics_codes:
+          type: string
+          description: A comma-separated list of NAICS codes to search by. Returns records that match the given codes.
+        allow_naics_child:
+          type: boolean
+          description: Include child NAICS codes. Must be used with the naics_codes filter.
+        aboriginal_owned:
+          type: boolean
+          description: Returns aboriginal owned opportunities if true. If false, returns not aboriginal owned opportunities.
+        veteran_owned:
+          type: boolean
+          description: Returns veteran owned opportunities if true. If false, returns not veteran owned opportunities.
+        women_owned:
+          type: boolean
+          description: Returns women owned opportunities if true. If false, returns not women owned opportunities.
+
     OpportunitiesResponse:
       type: object
       properties:
