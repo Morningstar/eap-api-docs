@@ -79,8 +79,8 @@ Access to the API is determined by your organization's plan. Some plans will rec
 
 # Versions
 
-- [/v2.0/endpoints](v2-0/endpoints.yml) * Latest
-- [/v1.0/endpoints](v1-0/endpoints.md)
+- [/v2.0/endpoints](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/omx/API-Docs/master/v2-0/endpoints.yml) * Latest
+- [/v1.0/endpoints](v1-0/endpoints.md) * Retired
 
 # Error Messages
 
