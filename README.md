@@ -22,7 +22,7 @@ The OMX API is queried with a key:
 
 ```
 {
-  api_key: ABC123
+  "api_key": "ABC123"
 }
 ```
 
@@ -31,18 +31,31 @@ The returned data provides the input parameters which were queried, plus a resul
 
 ```
 {
-  datetime: gmt_time,
-  key: ABC123,
-  format: json,
-  result: [
-    token: DEF456,
-    expires_on: gmt_time
-  ]
-  errors: [
-    [789, “Incorrect key”]
-  ]
-  warnings:[
-    [012, “Unspecified format”]
+  "datetime": "2022-05-04T17:14:37.399-04:00",
+  "format": "json",
+  "result": {
+    "expires_on": "2022-05-04T18:14:37.379-04:00",
+    "token": "DEF456"
+  },
+  "errors": [
+    {
+      "code": "0001",
+      "message": "Incorrect or Unauthorized key"
+    },
+    {
+      "code": "0007",
+      "message": "Expired API Key; please contact OMX team"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "0006",
+      "message": "Found unknown input parameters in the request: foo"
+    },
+    {
+      "code": "0004",
+      "message": "No page number specified, so defaulted to 1"
+    }
   ]
 }
 ```
@@ -58,17 +71,18 @@ The token provided in the authentication phase is used as an input parameter to 
 
 ```
 {
-  datetime: gmt_time,
-  token: DEF456,
-  expires_on: gmt_time,
-  format: json,
-  page: 1,
-  total_pages: 14,
-  result: [
+  "datetime": "2022-05-05T12:48:55.683-04:00",
+  "format": "json",
+  "token": "DEF456",
+  "token_expires_on": "2022-05-04T18:14:37.379-04:00",
+  "page_requested": 1,
+  "total_pages": 14,
+  "page_size": 100,
+  "result": [
   ]
-  errors: [
+  "errors": [
   ]
-  warnings:[
+  "warnings":[
   ]
 }
 ```
