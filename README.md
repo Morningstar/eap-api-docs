@@ -12,8 +12,8 @@ https://theomx.com/api/1.0/authenticate
 
 # Versions
 
-- [/v3.0/endpoints](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/Morningstar/API-Docs/master/v3-0/endpoints.yml) * Latest
-- [/v2.0/endpoints](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/Morningstar/API-Docs/master/v2-0/endpoints.yml) * Retired
+- [/v3.0/endpoints](https://htmlpreview.github.io/?https://github.com/Morningstar/API-Docs/v3-0/index.html) * Latest
+- [/v2.0/endpoints](https://htmlpreview.github.io/?https://github.com/Morningstar/API-Docs/v2-0/index.html) * Retired
 - [/v1.0/endpoints](v1-0/endpoints.md) * Retired
 
 # Authentication Phase
