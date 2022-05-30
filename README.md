@@ -12,8 +12,8 @@ https://theomx.com/api/1.0/authenticate
 
 # Versions
 
-- [/v3.0/endpoints](http://htmlpreview.github.io/?https://github.com/Morningstar/API-Docs/blob/master/v3-0/index.html) * Latest
-- [/v2.0/endpoints](http://htmlpreview.github.io/?https://github.com/Morningstar/API-Docs/blob/master/v2-0/index.html) * Retired
+- [/v3.0/endpoints](v3-0/endpoints.html) * Latest
+- [/v2.0/endpoints](v2-0/endpoints.html) * Retired
 - [/v1.0/endpoints](v1-0/endpoints.md) * Retired
 
 # Authentication Phase
