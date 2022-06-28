@@ -36,7 +36,7 @@ https://theomx.com/api/3.0/authenticate
   </tr>
   <tr>
     <td>datetime</td>
-    <td>abc123</td>
+    <td>2021-01-01T00:00:00.000-04:00</td>
     <td></td>
   </tr>
   <tr>
