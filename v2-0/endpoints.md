@@ -97,3 +97,127 @@ https://theomx.com/api/2.0/organizations
   </tr>
 </table>
 
+### Resultset (truncated)
+
+<table>
+  <tr>
+    <td><b>Field</b></td>
+    <td><b>Value</b></td>
+    <td><b><b>Notes</b></b></td>
+  </tr>
+  <tr>
+    <td>id</td>
+    <td>32344</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>organization_name</td>
+    <td>Acme Corporation</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>description</td>
+    <td>Supplier of premium widgets</td>
+    <td>First 100 characters</td>
+  </tr>
+  <tr>
+    <td>country</td>
+    <td>CA</td>
+    <td></td>
+  </tr>
+</table>
+
+### Input Parameters (robust)
+
+<table>
+  <tr>
+    <td><b>Parameter</b></td>
+    <td><b>Example</b></td>
+    <td><b><b>Notes</b></b></td>
+  </tr>
+  <tr>
+    <td>token</td>
+    <td>abc123</td>
+    <td>Mandatory</td>
+  </tr>
+  <tr>
+    <td>format</td>
+    <td>json</td>
+    <td>Must be json, xml or csv. Defaults to json if not present.</td>
+  </tr>
+  <tr>
+    <td>page</td>
+    <td>1</td>
+    <td>Defaults to 1 if not present.</td>
+  </tr>
+  <tr>
+    <td>keywords</td>
+    <td>{'aircraft', 'helicopters'}</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>country</td>
+    <td>CA</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>is_claimed</td>
+    <td>true</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>is_verified</td>
+    <td>true</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>aboriginal_owned</td>
+    <td>true</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>veteran_owned</td>
+    <td>true</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>women_owned</td>
+    <td>true</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>unspsc_codes</td>
+    <td>{'10000000', '11000000'}</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>naics_codes</td>
+    <td>{'111110', '121110'}</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>nsn_codes</td>
+    <td>{'5110005709017', '2110005709017'}</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>fsc_codes</td>
+    <td>{'1234', '5678'}</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>certifications</td>
+    <td>{'ISO9001', 'ISO14001'}</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>organization_type</td>
+    <td>Supplier</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>countries_exported_to</td>
+    <td>{'CA', 'US'}</td>
+    <td></td>
+  </tr>
+</table>
