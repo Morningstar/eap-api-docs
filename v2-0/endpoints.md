@@ -21,7 +21,7 @@ https://theomx.com/api/2.0/authenticate
   </tr>
   <tr>
     <td>format</td>
-    <td>json or xml</td>
+    <td>json</td>
     <td>Must be json or xml. Defaults to json if not present.</td>
   </tr>
 </table>
