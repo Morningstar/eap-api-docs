@@ -359,10 +359,77 @@ https://theomx.com/api/2.0/organizations
     <td>nace_codes</td>
     <td>["K64.1","K64.11"]</td>
     <td></td>
-  </tr>          
+  </tr>
   <tr>
-    <td>other_requirements</td>
-    <td>{'Description of requirement', 'Description of requirement'}</td>
+    <td>nace_codes</td>
+    <td>["K64.1","K64.11"]</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>lei_codes</td>
+    <td>["959800NEP6XY8CHS8G76","549300QE1RU34T50MR69"]</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>duns</td>
+    <td>12345678</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>certifications</td>
+    <td>["ISO 9001","ISO 9002"]</td>
+    <td></td>
+  </tr>
+    <tr>
+    <td>alliances</td>
+    <td>["Aerospace PEI","Aerospace Alberta"]</td>
+    <td></td>
+  </tr>
+  </tr>
+    <tr>
+    <td>product_and_services</td>
+    <td>["Private Banking","Investment Banking"]</td>
+    <td></td>
+  </tr>
+  </tr>
+  <tr>
+    <td>is_pinned</td>
+    <td>true</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>esg_risk_rating_score</td>
+    <td>0.8</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>esg_risk_rating_category</td>
+    <td>"negligible"</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>esg_risk_rating_class</td>
+    <td>"1"</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>esg_risk_exposure_score</td>
+    <td>0.8</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>esg_risk_exposure_category</td>
+    <td>"negligible"</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>esg_risk_management_score</td>
+    <td>0.8</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>esg_risk_management_category</td>
+    <td>"negligible"</td>
     <td></td>
   </tr>
 </table>
