@@ -295,11 +295,71 @@ https://theomx.com/api/2.0/organizations
     <td>2020</td>
     <td></td>
   </tr>
-   <tr>
+  <tr>
     <td>telephone</td>
     <td>4379179288</td>
     <td></td>
   </tr>
+  <tr>
+    <td>ext</td>
+    <td>4</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>is_claimed</td>
+    <td>true</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>is_verified</td>
+    <td>true</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>organization_types</td>
+    <td>["Corporation","Government"]</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>countries_exported_to</td>
+    <td>["CA","US"]</td>
+    <td></td>
+  </tr> 
+  <tr>
+    <td>annual_sales</td>
+    <td>1000000</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>annual_exports</td>
+    <td>2100000</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>total_employees</td>
+    <td>3100</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>major_clients</td>
+    <td>"OMX"</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>unspsc_codes</td>
+    <td>"84111700"</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>naics_codes</td>
+    <td>["523110","522110"]</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>nace_codes</td>
+    <td>["K64.1","K64.11"]</td>
+    <td></td>
+  </tr>          
   <tr>
     <td>other_requirements</td>
     <td>{'Description of requirement', 'Description of requirement'}</td>
