@@ -16,12 +16,12 @@ https://theomx.com/api/3.0/authenticate
   </tr>
   <tr>
     <td>api_key</td>
-    <td>abc123</td>
+    <td>"abc123"</td>
     <td>Mandatory</td>
   </tr>
   <tr>
     <td>format</td>
-    <td>json</td>
+    <td>"json"</td>
     <td>Must be json or xml. Defaults to json if not present.</td>
   </tr>
 </table>
@@ -36,12 +36,12 @@ https://theomx.com/api/3.0/authenticate
   </tr>
   <tr>
     <td>datetime</td>
-    <td>2021-01-01T00:00:00.000-04:00</td>
+    <td>"2021-01-01T00:00:00.000-04:00"</td>
     <td></td>
   </tr>
   <tr>
     <td>format</td>
-    <td>json</td>
+    <td>"json"</td>
     <td></td>
   </tr>
   <tr>
