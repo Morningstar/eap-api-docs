@@ -45,14 +45,9 @@ https://theomx.com/api/2.0/authenticate
     <td></td>
   </tr>
   <tr>
-    <td>result.token</td>
-    <td>"a4603ebbe8f819cf0f12386bc7ee359c"</td>
+    <td>result</td>
+    <td>{"token": "a4603ebbe8f819cf0f12386bc7ee359c","expires_on": "2021-01-01T00:00:00.000-04:00"}</td>
     <td></td>
-  </tr>
-    <tr>
-    <td>result.expires_on</td>
-    <td>"2021-01-01T00:00:00.000-04:00"</td>
-    <td>One hour from time of query. GMT.</td>
   </tr>
 </table>
 
@@ -483,22 +478,22 @@ https://theomx.com/api/2.0/opportunities
   </tr>
   <tr>
     <td>id</td>
-    <td>123ABC</td>
+    <td>"HLiLNyuAvrLVNq4oawR4gOJfAY0q0t_Msqu2hEDDEfU"</td>
     <td></td>
   </tr>
   <tr>
     <td>title</td>
-    <td>Seeking suppliers of premium widgets</td>
+    <td>"Seeking suppliers of premium widgets"</td>
     <td></td>
   </tr>
   <tr>
     <td>description</td>
-    <td>All colors, all sizes</td>
+    <td>"All colors, all sizes"</td>
     <td>First 100 characters</td>
   </tr>
   <tr>
     <td>type</td>
-    <td>Notice of Intent</td>
+    <td>"Notice of Intent"</td>
     <td></td>
   </tr>
   <tr>
@@ -528,37 +523,37 @@ https://theomx.com/api/2.0/opportunities
   </tr>
   <tr>
     <td>token</td>
-    <td>ABC123</td>
+    <td>"HLiLNyuAvrLVNq4oawR4gOJfAY0q0t_Msqu2hEDDEfU"</td>
     <td>Mandatory</td>
   </tr>
   <tr>
     <td>format</td>
-    <td>json</td>
+    <td>"json"</td>
     <td>Must be json, xml or csv. Defaults to json if not present.</td>
   </tr>
   <tr>
     <td>page</td>
-    <td>1</td>
+    <td>"1"</td>
     <td>Defaults to 1 if not present.</td>
   </tr>
   <tr>
     <td>keywords</td>
-    <td>{'aircraft', 'helicopters'}</td>
+    <td>"cloud,hosting"</td>
     <td></td>
   </tr>
   <tr>
     <td>posted_after</td>
-    <td>2018-01-01 12:00:00</td>
+    <td>"2018-01-01 12:00:00"</td>
     <td>GMT</td>
   </tr>
   <tr>
     <td>country</td>
-    <td>CA</td>
+    <td>"CA"</td>
     <td></td>
   </tr>
   <tr>
     <td>unspsc_codes</td>
-    <td>{'10000000', '11000000'}</td>
+    <td>"10000000,11000000"</td>
     <td></td>
   </tr>
   <tr>
@@ -568,17 +563,12 @@ https://theomx.com/api/2.0/opportunities
   </tr>
   <tr>
     <td>naics_codes</td>
-    <td>{'111110', '121110'}</td>
+    <td>"111110', '121110'"</td>
     <td></td>
   </tr>
   <tr>
     <td>allow_naics_child</td>
     <td>true</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>nsn_codes</td>
-    <td>{'5110005709017', '2110005709017'}</td>
     <td></td>
   </tr>
   <tr>
@@ -608,82 +598,28 @@ https://theomx.com/api/2.0/opportunities
   </tr>
   <tr>
     <td>id</td>
-    <td>123ABC</td>
+    <td>"HLiLNyuAvrLVNq4oawR4gOJfAY0q0t_Msqu2hEDDEfU"</td>
     <td></td>
   </tr>
   <tr>
     <td>title</td>
-    <td>Seeking suppliers of premium widgets</td>
+    <td>"Seeking suppliers of premium widgets"</td>
     <td></td>
   </tr>
   <tr>
     <td>description</td>
-    <td>All colors, all sizes</td>
+    <td>"All colors, all sizes"</td>
     <td>First 100 characters</td>
   </tr>
   <tr>
-    <td>type</td>
-    <td>Notice of Intent</td>
-    <td></td>
-  </tr>
   <tr>
-    <td>posted_on</td>
-    <td>2018-01-01 12:00:00</td>
-    <td>GMT</td>
-  </tr>
-  <tr>
-    <td>expires_on</td>
-    <td>2018-01-01 12:00:00</td>
-    <td>GMT</td>
-  </tr>
-  <tr>
-    <td>omx_url</td>
-    <td>https://theomx.com/some-url</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>organization_name</td>
-    <td>Acme Corporation</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>unspsc_codes</td>
-    <td>{'10000000', '11000000'}</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>naics_codes</td>
-    <td>{'111110', '121110'}</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>nsn_codes</td>
-    <td>{'5110005709017', '2110005709017'}</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>fsc_codes</td>
-    <td>{'1234', '5678'}</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>certifications</td>
-    <td>{'ISO9001', 'ISO14001'}</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>incoterms</td>
-    <td>{'CFR', 'CIF'}</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>fulfillment_date</td>
-    <td>2018-01-01</td>
+    <td>fulfillment_data</td>
+    <td>"2015-07-31"</td>
     <td></td>
   </tr>
   <tr>
     <td>delivery_country</td>
-    <td>CA</td>
+    <td>"CA"</td>
     <td></td>
   </tr>
   <tr>
@@ -692,17 +628,12 @@ https://theomx.com/api/2.0/opportunities
     <td></td>
   </tr>
   <tr>
-    <td>maximum_company_size</td>
-    <td>250</td>
+    <td>type</td>
+    <td>Notice of Intent</td>
     <td></td>
   </tr>
-  <tr>
+    <tr>
     <td>must_be_aboriginal_owned</td>
-    <td>true</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>must_be_veteran_owned</td>
     <td>true</td>
     <td></td>
   </tr>
@@ -711,14 +642,69 @@ https://theomx.com/api/2.0/opportunities
     <td>true</td>
     <td></td>
   </tr>
+    <tr>
+    <td>must_be_veteran_owned</td>
+    <td>true</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>organization_name</td>
+    <td>"ACME corporation"</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>posted_on</td>
+    <td>"2018-01-01 12:00:00"</td>
+    <td>GMT</td>
+  </tr>
+  <tr>
+    <td>expires_on</td>
+    <td>"2018-01-01 12:00:00"</td>
+    <td>GMT</td>
+  </tr>
+  <tr>
+    <td>maximum_company_size</td>
+    <td>250</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>unspsc_codes</td>
+    <td>["10000000", "11000000"]</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>naics_codes</td>
+    <td>["111110", "121110"]</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>nace_codes</td>
+    <td>["K64.1", "K64.11"]</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>certifications</td>
+    <td>["ISO9001", "ISO14001"]</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>required_incoterms</td>
+    <td>["CFR", "CIF"]</td>
+    <td></td>
+  </tr>
   <tr>
     <td>items</td>
-    <td>{'Description of item', 'Description of item'}</td>
+    <td>["Description of item", "Description of item"]</td>
     <td></td>
   </tr>
   <tr>
     <td>other_requirements</td>
-    <td>{'Description of requirement', 'Description of requirement'}</td>
+    <td>["Description of requirement", "Description of requirement"]</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>omx_url</td>
+    <td>"https://theomx.com/some-url"</td>
     <td></td>
   </tr>
 </table>
