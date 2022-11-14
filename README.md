@@ -5,14 +5,15 @@ The OMX API accepts queries using a two-phase approach: the authentication hands
 The URL structure for querying the OMX API is as follows:
 
 ```
-https://theomx.com/api/1.0/authenticate
+https://esgperformance.sustainalytics.com/api/3.1/authenticate
 ```
 
 "1.0" represents the version number, and "authenticate" represents the endpoint. All versions and endpoints will be documented here.
 
 # Versions
 
-- [/v3.0/endpoints](v3-0/endpoints.md) * Latest
+- [/v3.1/endpoints](v3-1/endpoints.md) * Latest
+- [/v3.0/endpoints](v3-0/endpoints.md) * 
 - [/v2.0/endpoints](v2-0/endpoints.md) * Retired
 - [/v1.0/endpoints](v1-0/endpoints.md) * Retired
 
@@ -166,6 +167,9 @@ Access to the API is determined by your organization's plan. Some plans will rec
   <tr>
   <td>0006</td>
   <td>Invalid input parameter received</td>
+  <td>authenticate, organizations</td>
+  <td>0007</td>
+  <td>The current API domain has been deprecated. The date and time of the change will be included in the message.</td>
   <td>authenticate, organizations</td>
   </tr>
 </table>
