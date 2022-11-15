@@ -3,7 +3,7 @@
 ## Autenticate
 
 ~~~
-https://theomx.com/api/3.0/authenticate
+https://esgperformance.sustainalytics.com/api/3.0/authenticate
 ~~~
 
 ### Input Parameters
@@ -54,7 +54,7 @@ https://theomx.com/api/3.0/authenticate
 ## Organizations
 
 ~~~
-https://theomx.com/api/3.0/organizations
+https://esgperformance.sustainalytics.com/api/3.0/organizations
 ~~~
 
 ### Input Parameters (truncated)
@@ -252,7 +252,7 @@ https://theomx.com/api/3.0/organizations
   </tr>
     <tr>
     <td>website</td>
-    <td>"https://theomx.com/"</td>
+    <td>"https://esgperformance.sustainalytics.com/"</td>
     <td></td>
   </tr>
   <tr>
