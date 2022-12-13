@@ -8,14 +8,12 @@ The URL structure for querying the EAP API is as follows:
 https://esgperformance.sustainalytics.com/api/3.1/authenticate
 ```
 
-"1.0" represents the version number, and "authenticate" represents the endpoint. All versions and endpoints will be documented here.
+"3.0" represents the version number, and "authenticate" represents the endpoint. All versions and endpoints will be documented here.
 
 # Versions
 
 - [/v3.1/endpoints](v3-1/endpoints.md) * Latest
-- [/v3.0/endpoints](v3-0/endpoints.md) * 
-- [/v2.0/endpoints](v2-0/endpoints.md) * Retired
-- [/v1.0/endpoints](v1-0/endpoints.md) * Retired
+- [/v3.0/endpoints](v3-0/endpoints.md) *
 
 # Authentication Phase
 
