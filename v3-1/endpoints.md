@@ -107,7 +107,7 @@ https://esgperformance.sustainalytics.com/api/3.1/organizations
   </tr>
   <tr>
     <td>organization_name</td>
-    <td>"OMX"</td>
+    <td>"EAP"</td>
     <td></td>
   </tr>
   <tr>
@@ -242,7 +242,7 @@ https://esgperformance.sustainalytics.com/api/3.1/organizations
   </tr>
   <tr>
     <td>organization_name</td>
-    <td>"OMX"</td>
+    <td>"EAP"</td>
     <td></td>
   </tr>
   <tr>
@@ -257,7 +257,7 @@ https://esgperformance.sustainalytics.com/api/3.1/organizations
   </tr>
   <tr>
     <td>email</td>
-    <td>"info@theomx.com"</td>
+    <td>"info@eap.com"</td>
     <td></td>
   </tr>
   <tr>
@@ -337,7 +337,7 @@ https://esgperformance.sustainalytics.com/api/3.1/organizations
   </tr>
   <tr>
     <td>major_clients</td>
-    <td>"OMX"</td>
+    <td>"EAP"</td>
     <td></td>
   </tr>
   <tr>
