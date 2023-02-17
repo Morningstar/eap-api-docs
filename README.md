@@ -5,15 +5,16 @@ The ESG Assessment Platform (EAP) API accepts queries using a two-phase approach
 The URL structure for querying the EAP API is as follows:
 
 ```
-https://esgperformance.sustainalytics.com/api/3.1/authenticate
+https://esgperformance.sustainalytics.com/api/4.0/authenticate
 ```
 
-"3.0" represents the version number, and "authenticate" represents the endpoint. All versions and endpoints will be documented here.
+"4.0" represents the version number, and "authenticate" represents the endpoint. All versions and endpoints will be documented here.
 
 # Versions
 
-- [/v3.1/endpoints](v3-1/endpoints.md) * Latest
-- [/v3.0/endpoints](v3-0/endpoints.md) *
+- [/v4.0/endpoints](v4-0/endpoints.md) * Latest
+- [/v3.1/endpoints](v3-1/endpoints.md)
+- [/v3.0/endpoints](v3-0/endpoints.md) 
 
 # Authentication Phase
 
