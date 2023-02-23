@@ -1,6 +1,6 @@
 # API V4.0 Endpoints
 
-## Autenticate
+## Authenticate
 
 ~~~
 https://esgperformance.sustainalytics.com/api/4.0/authenticate
