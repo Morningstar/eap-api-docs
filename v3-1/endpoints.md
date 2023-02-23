@@ -1,6 +1,6 @@
 # API V3.1 Endpoints
 
-## Autenticate
+## Authenticate
 
 ~~~
 https://esgperformance.sustainalytics.com/api/3.1/authenticate
